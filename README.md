@@ -1,21 +1,24 @@
 # set-dev-env
 Tools to set a development environment
 
-## Setup
+### Setup
 ```bash
 docker-compose up
 ```
 Add ```-d``` to run in background
 
-## Containers
-- php:7.4-apache
-  - msqli
-  - pdo
-  - xdebug enabled
+#### Containers
+##### php:7.4-apache
+  - extensions:
+    - msqli
+    - pdo
+    - xdebug enabled
 
-- mariadb
-  - default values:
+##### mariadb
+  - defaults:
     - host: ```db```
     - user: ```dev```
     - pass: ```devpass```
     - root_pass: ```rootpass```
+
+##### adminer

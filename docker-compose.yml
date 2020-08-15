@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: phpserver
+    depends_on:
+      - db
+    volumes:
+      - ./app:/var/www/html
+    ports:
+      - 8008:8080
+  db:
+    image: mariadb
+    container_name: mariadb10
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'rootpass'
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: 'devpass'
+    ports:
+      - 6633:3607
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 6630:8080

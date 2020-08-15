@@ -22,3 +22,7 @@ Add ```-d``` to run in background
     - root_pass: ```rootpass```
 
 #### adminer
+
+### Dependences
+  - docker
+  - docker-compose

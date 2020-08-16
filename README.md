@@ -7,7 +7,7 @@ docker-compose up
 ```
 Add ```-d``` to run in background.
 
-### Using
+### Quick Start
 Access the **/app** content in browser by typing ```127.0.0.1```  
 Add ```:8900``` to view **PHPMyAdmin**
 

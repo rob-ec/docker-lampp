@@ -5,9 +5,11 @@ Tools to set a development environment
 ```bash
 docker-compose up
 ```
-Add ```-d``` to run in background.  
-> Access the **/app** content in browser by typing ```127.0.0.1```  
-> Add ```:8900``` to view **PHPMyAdmin**
+Add ```-d``` to run in background.
+
+### Using
+Access the **/app** content in browser by typing ```127.0.0.1```  
+Add ```:8900``` to view **PHPMyAdmin**
 
 ### Containers
 #### php:7.4-apache

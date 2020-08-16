@@ -1,5 +1,5 @@
-# set-dev-env
-Tools to set a development environment
+# docker-lampp
+Docker Environment with Apache + MariaDB + PHP + PHPMyAdmin
 
 ### Setup
 ```shell

@@ -5,18 +5,20 @@ Tools to set a development environment
 ```bash
 docker-compose up
 ```
-Add ```-d``` to run in background
+Add ```-d``` to run in background.  
+> Access the **/app** content in browser by typing ```127.0.0.1```  
+> Add ```:8900``` to view **PHPMyAdmin**
 
 ### Containers
 #### php:7.4-apache
-  - port: 80
+  - port: ```80```
   - extensions:
     - msqli
     - pdo
     - xdebug enabled
 
 #### mariadb
-  - port: 8889
+  - port: ```8889```
   - defaults:
     - host: ```db```
     - user: ```dev```
@@ -24,7 +26,7 @@ Add ```-d``` to run in background
     - root_pass: ```rootpass```
 
 #### phpmyadmin
-  - port: 8900
+  - port: ```8900```
   - linked to mariadb by default
 
 ### Dependences

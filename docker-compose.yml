@@ -1,30 +1,44 @@
-version: '3.8'
+version: '3'
 services:
   web:
     build:
       context: ./app
       dockerfile: Dockerfile
-    container_name: phpserver
-    depends_on:
+    container_name: 'phpserver'
+    environment:
+      - ALLOW_OVERRIDE=true
+    links:
       - db
     volumes:
-      - ./app:/var/www/html
+      - ./app:/var/www/html/
     ports:
-      - 8008:8080
+      - "127.0.0.1:80:80"
   db:
     image: mariadb
-    container_name: mariadb10
+    container_name: 'phpserver-database'
     restart: always
+    volumes:
+      - ./database/data/mysql:/var/lib/mysql
+      - ./database/logs/mysql:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 'rootpass'
       MYSQL_DATABASE: test_db
       MYSQL_USER: dev
       MYSQL_PASSWORD: 'devpass'
     ports:
-      - 6633:3607
-
-  adminer:
-    image: adminer
+      - "127.0.0.1:8889:3606"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: 'phpserver-phpmyadmin'
+    depends_on:
+      - db
     restart: always
+    environment:
+      PMA_PORT: 3306
+      PMA_USER: dev
+      PMA_PASSWORD: 'devpass'
+      MYSQL_ROOT_PASSWORD: 'rootpass'
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: 'devpass'
     ports:
-      - 6630:8080
+      - "127.0.0.1:8900:80"

@@ -1,5 +1,7 @@
 # docker-lampp
-Docker Environment with Apache + MariaDB + PHP + PHPMyAdmin
+Docker Environment with Apache + MariaDB + PHP + PHPMyAdmin  
+
+*Read this in other languages: [English](README.md), [Português](README.pt-BR.md)*
 
 ### Setup
 ```shell

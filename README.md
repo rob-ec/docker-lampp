@@ -9,19 +9,23 @@ Add ```-d``` to run in background
 
 ### Containers
 #### php:7.4-apache
+  - port: 80
   - extensions:
     - msqli
     - pdo
     - xdebug enabled
 
 #### mariadb
+  - port: 8889
   - defaults:
     - host: ```db```
     - user: ```dev```
     - pass: ```devpass```
     - root_pass: ```rootpass```
 
-#### adminer
+#### phpmyadmin
+  - port: 8900
+  - linked to mariadb by default
 
 ### Dependences
   - docker

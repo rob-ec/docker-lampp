@@ -1,6 +1,3 @@
-<?php
-require __DIR__.'/source/core/testConnection.php';
-?>
 <html>
     <head>
         <meta charset="utf-8"/>

@@ -1,7 +1,7 @@
 # docker-lampp
 Ambiente Docker com Apache + MariaDB + PHP + PHPMyAdmin  
 
-*Leia isso em outros idiomas: [English](README.md), [Português](README.pt-BR.md)*
+*Read this in other languages: [English](README.md), [Português do Brasil](README.pt-BR.md)*
 
 ### Instalar
 ```shell

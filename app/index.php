@@ -6,9 +6,9 @@
     <body>
         <!-- DB CONNECT TEST -->
         <?php $connect = new mysqli('db', 'dev', 'devpass', 'test_db'); ?>
-        <p><?= ($connect->connect_error) ? "DB = Error" : "DB = Ok" ?></p>
+        <p><?= ($connect->connect_error) ? "Database = Error" : "Database = Ok" ?></p>
         <!-- PHPMyAdmin -->
-        <a href="http://127.0.0.1:8900">[PHPMyAdmin]</a>
+        <a href="http://127.0.0.1:8900" target="_blank">[PHPMyAdmin]</a>
         <!-- PHP Info -->
         <?php phpinfo(); ?>
     </body>

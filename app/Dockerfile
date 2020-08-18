@@ -10,7 +10,10 @@ RUN docker-php-ext-install pdo && \
     docker-php-ext-install tokenizer && \
     docker-php-ext-install json && \
     docker-php-ext-install gettext && \
-    docker-php-ext-install exif
+    docker-php-ext-install exif && \
+    docker-php-ext-install gd && \
+    docker-php-ext-install opcache && \
+    docker-php-ext-enable opcache
 
 # install & enable xdebug
 RUN pecl install xdebug-2.8.1 && \

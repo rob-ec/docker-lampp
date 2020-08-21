@@ -12,7 +12,7 @@ services:
     volumes:
       - ./app:/var/www/html/
     ports:
-      - "127.0.0.1:80:80"
+      - "80:80"
   db:
     image: mariadb
     container_name: 'phpserver-database'
@@ -26,7 +26,7 @@ services:
       MYSQL_USER: dev
       MYSQL_PASSWORD: 'devpass'
     ports:
-      - "127.0.0.1:8889:3606"
+      - "8889:3606"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: 'phpserver-phpmyadmin'
@@ -41,4 +41,4 @@ services:
       MYSQL_USER: dev
       MYSQL_PASSWORD: 'devpass'
     ports:
-      - "127.0.0.1:8900:80"
+      - "8900:80"

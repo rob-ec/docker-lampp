@@ -2,6 +2,7 @@ FROM php:7.4-apache
 
 # upgrade system
 RUN apt-get update && apt-get upgrade -y
+RUN apt-get install zlib1g-dev libpng-dev -y
 
 # install php extensions
 RUN docker-php-ext-install pdo && \

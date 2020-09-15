@@ -3,11 +3,13 @@
         <meta charset="utf-8"/>
         <title>docker-lampp</title>
     </head>
-    <body>
-        <!-- DB CONNECT TEST -->
+    <body class="center">
         <?php $connect = new mysqli('db', 'dev', 'devpass', 'test_db'); ?>
-        <p><?= ($connect->connect_error) ? "Database = Error" : "Database = Ok" ?></p>
-        <!-- PHP Info -->
+	
+	<table>
+		<tr><td class="e">Database</td><td class="v"><?= ($connect->connect_error) ? "Error" : "Ok" ?></td></tr>
+	</table>
+
         <?php phpinfo(); ?>
     </body>
 </html>

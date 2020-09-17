@@ -38,4 +38,6 @@ Adicione `:8900` para visualizar o **PHPMyAdmin**
   - docker-compose
 
 ### Habilitar HTTPS (apenas para o phpserver)
-Para habilitar o protocolo HTTPS, *antes de executar o docker-compose*, crie o diretório `app/certificates` e coloque seus certificados SSL lá. Então, remova o comentário da seção SSL no `app/Dockerfile` (certifique-se de que os nomes dos arquivos de certificado sejam iguais aos do Dockerfile).  Também descomente a linha da Porta HTTPS em `docker-compose.yml`. Depois de executar o docker-compose, você deve conseguir acessar [https://localhost](https://localhost).
+Para habilitar o protocolo HTTPS, *antes de executar o docker-compose*, crie o diretório `app/certificates` e coloque seus certificados SSL lá.  
+Então, descomente a seção SSL no `app/Dockerfile` (certifique-se de que os nomes dos arquivos de certificado sejam iguais aos do Dockerfile).  Também descomente a linha da Porta HTTPS em `docker-compose.yml`.  
+Depois de executar o docker-compose, você deve conseguir acessar [https://localhost](https://localhost).

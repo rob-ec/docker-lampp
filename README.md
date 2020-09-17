@@ -36,3 +36,6 @@ Add `:8900` to view **PHPMyAdmin**
 ### Dependences
   - docker
   - docker-compose
+
+### Enable HTTPS (only to phpserver)
+To enable the HTTPS Protocol, *before running docker-compose*, create the path `app/certificates` and put your SSL Certificates there. Then, uncomment the SSL Section on `app/Dockerfile` (make sure that the certificate file names are the same as in the Dockerfile). Also uncomment the HTTPS Port on `docker-compose.yml`.  After running the docker-compose you should be able to access [https://localhost](https://localhost).

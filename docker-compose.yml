@@ -4,6 +4,10 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
+      args:
+        php_ini_model: '/usr/local/etc/php/php.ini-development'
+        php_ini_lampp: '/usr/local/etc/php/conf.d/docker-lampp-dev.ini'
+#        apache_conf_file: '/etc/apache2/sites-available/000-default.conf' # HTTPS Conf. File
     container_name: 'phpserver'
     environment:
       - ALLOW_OVERRIDE=true

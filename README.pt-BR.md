@@ -31,7 +31,7 @@ Adicione `:8900` para visualizar o **PHPMyAdmin**
 
 #### phpmyadmin
   - porta: `8900`
-  - conectado ao mariadb po padrão
+  - conectado ao mariadb por padrão
 
 ### Dependencias
   - docker

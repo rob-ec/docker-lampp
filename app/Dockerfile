@@ -32,7 +32,7 @@ RUN apt-get update && apt-get upgrade -y && \
     sed -i 's/post_max_size = .*/post_max_size = 25M/g' ${php_ini_lampp} && \
     sed -i 's/upload_max_filesize = .*/upload_max_filesize = 40M/g' ${php_ini_lampp} && \
     sed -i 's/max_file_uploads = .*/max_file_uploads = 3/g' ${php_ini_lampp} && \
-    sed -i '/;date.timezone =/a date.timezone = America/Fortaleza' ${php_ini_lampp} && \
+#    sed -i '/;date.timezone =/a date.timezone = America/Fortaleza' ${php_ini_lampp} && \
     sed -i '/\[Pdo_mysql\]/a pdo_mysql.cache_size = 2000' ${php_ini_lampp} && \
     sed -i 's/mail.add_x_header = .*/mail.add_x_header = On/g' ${php_ini_lampp}
 

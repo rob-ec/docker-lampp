@@ -1,6 +1,5 @@
 ### App ###
 database/
-certificates/
 
 # Created by https://www.toptal.com/developers/gitignore/api/linux,windows,macos,code,netbeans,phpstorm,composer
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,windows,macos,code,netbeans,phpstorm,composer

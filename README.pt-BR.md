@@ -41,3 +41,8 @@ Adicione `:8900` para visualizar o **PHPMyAdmin**
 Para habilitar o protocolo HTTPS, *antes de executar o docker-compose*, crie o diretório `app/certificates` e coloque seus certificados SSL lá.  
 Então, descomente a seção SSL no `app/Dockerfile` (certifique-se de que os nomes dos arquivos de certificado sejam iguais aos do Dockerfile).  Também descomente as linhas da "Porta HTTPS" (`# HTTPS Port`) e do "Arquivo de configuração HTTPS" (`# HTTPS Conf. File`) em `docker-compose.yml`.  
 Depois de executar o docker-compose, você deve conseguir acessar [https://localhost](https://localhost).
+
+### Corrigir problemas com permissões do usuário do Linux
+Para corrigir problemas de permissão do usuário no Linux, descomente os argumentos `USER_ID` e `GROUP_ID` em `docker-compose.yml`.   
+Certifique-se de que esses valores são iguais aos seus valores de usuário, você pode verificar esses valores no terminal usando os comandos `id -u` (para visualizar `USER_ID`) e `id -g` (para visualizar `GROUP_ID`).  
+Também remova o comentário da seção "PERMISSÃO DO USUÁRIO" em `app/Dockerfile`, bem como os argumentos na parte superior do arquivo (`USER_ID` e `GROUP_ID`).

@@ -5,9 +5,11 @@ services:
       context: ./app
       dockerfile: Dockerfile
       args:
-        php_ini_model: '/usr/local/etc/php/php.ini-development'
-        php_ini_lampp: '/usr/local/etc/php/conf.d/docker-lampp-dev.ini'
-#        apache_conf_file: '/etc/apache2/sites-available/000-default.conf' # HTTPS Conf. File
+#        USER_ID: 1000 # find yours with `id -u`
+#        GROUP_ID: 1000 # find yours with `id -u`
+        PHP_INI_MODEL: '/usr/local/etc/php/php.ini-development'
+        PHP_INI_LAMPP: '/usr/local/etc/php/conf.d/docker-lampp-dev.ini'
+#        APACHE_CONF_FILE: '/etc/apache2/sites-available/000-default.conf' # HTTPS Conf. File
     container_name: 'phpserver'
     environment:
       - ALLOW_OVERRIDE=true
@@ -22,9 +24,9 @@ services:
     image: mariadb
     container_name: 'phpserver-database'
     restart: always
-    volumes:
-      - ./database/data/mysql:/var/lib/mysql
-      - ./database/logs/mysql:/var/log/mysql
+#    volumes:
+#      - ./database/data/mysql:/var/lib/mysql
+#      - ./database/logs/mysql:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 'rootpass'
       MYSQL_DATABASE: test_db

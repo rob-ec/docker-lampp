@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
       args:
 #        USER_ID: 1000 # find yours with `id -u`
-#        GROUP_ID: 1000 # find yours with `id -u`
+#        GROUP_ID: 1000 # find yours with `id -g`
         PHP_INI_MODEL: '/usr/local/etc/php/php.ini-development'
         PHP_INI_LAMPP: '/usr/local/etc/php/conf.d/docker-lampp-dev.ini'
 #        APACHE_CONF_FILE: '/etc/apache2/sites-available/000-default.conf' # HTTPS Conf. File

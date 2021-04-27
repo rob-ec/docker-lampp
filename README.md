@@ -48,4 +48,41 @@ Make sure this values are the same as your user values, you can check these valu
 Also uncomment the "USER'S PERMISSION" section in `app/Dockerfile`, as well as the arguments at the top of the file (`USER_ID` and `GROUP_ID`).
 
 ### Fix Fedora 33 compatibility
-Fedora 33 uses cgroups v2 by default, that is not yet implemented. To fix it folow the steps [here](https://www.osradar.com/install-docker-fedora-33/).
+_(That's not exactly a problem with this code, but commonly affect it.)_  
+Fedora 33 uses cgroups v2 by default and it makes Docker broke. To fix it folow the steps here.  
+
+**Add the repository**
+
+```bash
+$ sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+```
+
+**Install Docker & Docker compose**
+
+```bash
+$ sudo dnf install docker-ce docker-compose
+```
+
+**GRUB configuration**
+
+Check the `/etc/default/grub` file. In the line that contains `GRUB_CMDLINE_LINUX` the parameter `system.unified_cgroup_hierarchy=0` should be set, if not, make it. With the **vim** editor it could be made by:
+
+```bash
+$ sudo vim /etc/default/grub
+```
+
+If some change was necesary in this file, run the following command to update grub config:
+
+```bash
+$ sudo grub2-mkconfig
+```
+
+**Inicie o Docker**
+```bash
+$ sudo systemctl start docker
+```
+
+If the comand bellow runs without any problem, docker-compose shuold also do. 
+```
+$ sudo docker run hello-world
+```

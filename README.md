@@ -46,3 +46,6 @@ After running the docker-compose you should be able to access [https://localhost
 To correct user permission issues on Linux, uncoment the `USER_ID` and `GROUP_ID` arguments in `docker-compose.yml`.  
 Make sure this values are the same as your user values, you can check these values in the terminal using the `id -u` (to view `USER_ID`) & `id -g` (to view `GROUP_ID`) commands.  
 Also uncomment the "USER'S PERMISSION" section in `app/Dockerfile`, as well as the arguments at the top of the file (`USER_ID` and `GROUP_ID`).
+
+### Fix Fedora 33 compatibility
+Fedora 33 uses cgroups v2 by default, that is not yet implemented. To fix it folow the steps [here](https://www.osradar.com/install-docker-fedora-33/).

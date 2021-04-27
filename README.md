@@ -49,7 +49,7 @@ Also uncomment the "USER'S PERMISSION" section in `app/Dockerfile`, as well as t
 
 ### Fix Fedora 33 compatibility
 _(That's not exactly a problem with this code, but commonly affect it.)_  
-Fedora 33 uses cgroups v2 by default and it makes Docker broke. To fix it folow the steps here.  
+*Fedora 33* uses _cgroups v2_ by default and it makes Docker broke. To fix it folow the steps here.  
 
 **Add the repository**
 

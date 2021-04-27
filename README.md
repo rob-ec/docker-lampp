@@ -77,7 +77,7 @@ If some change was necesary in this file, run the following command to update gr
 $ sudo grub2-mkconfig
 ```
 
-**Inicie o Docker**
+**Start Docker**
 ```bash
 $ sudo systemctl start docker
 ```

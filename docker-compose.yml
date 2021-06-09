@@ -33,7 +33,7 @@ services:
       MYSQL_USER: dev
       MYSQL_PASSWORD: 'devpass'
     ports:
-      - "8889:3606"
+      - "3606:3606"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: 'phpserver-phpmyadmin'
